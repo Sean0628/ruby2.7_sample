@@ -4,9 +4,26 @@ MAINTAINER sean0628
 ARG ruby_version='2.7.0-dev'
 
 RUN yum -y update
-RUN yum install -y git-core zlib zlib-devel gcc-c++ patch readline readline-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison curl sqlite-devel ruby
+RUN yum install -y autoconf \
+                   automake \
+                   bison \
+                   bzip2 \
+                   curl \
+                   git-core \
+                   gcc-c++ \
+                   libffi-devel \
+                   libtool \
+                   libyaml-devel \
+                   make \
+                   openssl-devel \
+                   patch \
+                   ruby \
+                   readline \
+                   readline-devel \
+                   sqlite-devel \
+                   zlib \
+                   zlib-devel
 RUN yum clean all
-
 
 RUN git clone https://github.com/rbenv/rbenv.git /usr/local/rbenv
 RUN mkdir -p usr/local/rbenv/plugins
